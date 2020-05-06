@@ -8,47 +8,47 @@ class RowBuilder
 
   def run
     if x <= 1
-      header_row
+      header
     else
-      body_row
+      body
     end
   end
 
   private
 
-  def header_row
+  def header
     if y == 3
-      "#{header_row_base}\n"
+      "#{header_base}\n"
     else
-      header_row_base
+      header_base
     end
   end
 
-  def body_row
+  def body
     if y == 3
-      "#{body_row_base}|\n"
+      "#{body_base}|\n"
     else
-      body_row_base
+      body_base
     end
   end
 
-  def header_row_base
+  def header_base
     if x == 0
-      first_row
+      first
     else
-      second_row
+      second
     end
   end
 
-  def body_row_base
+  def body_base
     if x.even?
-      even_row
+      even
     else
-      odd_row
+      odd
     end
   end
 
-  def first_row
+  def first
     if y == 0
       "   "
     else
@@ -56,7 +56,7 @@ class RowBuilder
     end
   end
 
-  def second_row
+  def second
     if y == 0
       "   "
     else
@@ -64,7 +64,7 @@ class RowBuilder
     end
   end
 
-  def even_row
+  def even
     if y == 0
       "#{("A".ord + x / 2 - 1).chr} "
     else
@@ -72,7 +72,7 @@ class RowBuilder
     end
   end
 
-  def odd_row
+  def odd
     if y == 0
       "  "
     else
