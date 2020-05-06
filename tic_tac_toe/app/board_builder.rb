@@ -1,26 +1,30 @@
 class BoardBuilder
   BOARD_SIZE = 3
 
-  def run
-    output = ""
+  attr_accessor :board
 
+  def initialize
+    @board = ""
+  end
+
+  def run
     (0..BOARD_SIZE * 2 + 1).each do |x|
       (0..BOARD_SIZE).each do |y|
         if x == 0
-          output += first_row(y)
+          self.board += first_row(y)
         elsif x == 1
-          output += second_row(y)
+          self.board += second_row(y)
         elsif x.even?
-          output += even_row(x / 2 - 1, y)
+          self.board += even_row(x / 2 - 1, y)
         elsif x.odd?
-          output += odd_row(y)
+          self.board += odd_row(y)
         end
       end
 
-      output += end_of_row(x)
+      self.board += end_of_row(x)
     end
 
-    output
+    board
   end
 
   private
