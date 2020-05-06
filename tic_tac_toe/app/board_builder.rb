@@ -17,7 +17,7 @@ class BoardBuilder
         end
       end
 
-      output += "\n"
+      output += end_of_row(x)
     end
 
     output
@@ -35,7 +35,7 @@ class BoardBuilder
 
   def second_row(y)
     if y == 0
-       "   "
+      "   "
     else
       "__ "
     end
@@ -44,8 +44,6 @@ class BoardBuilder
   def even_row(x, y)
     if y == 0
       "#{("A".ord + x).chr} "
-    elsif y == 3
-      "|  |"
     else
       "|  "
     end
@@ -54,10 +52,16 @@ class BoardBuilder
   def odd_row(y)
     if y == 0
       "  "
-    elsif y == 3
-      "|__|"
     else
       "|__"
+    end
+  end
+
+  def end_of_row(x)
+    if x == 0 || x == 1
+      "\n"
+    else
+      "|\n"
     end
   end
 end
