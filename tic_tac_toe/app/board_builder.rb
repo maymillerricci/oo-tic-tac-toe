@@ -1,25 +1,25 @@
 class BoardBuilder
+  BOARD_SIZE = 3
   def run
     output = ""
-    (0..7).each do |x|
-      (0..3).each do |y|
+
+    (0..BOARD_SIZE * 2 + 1).each do |x|
+      (0..BOARD_SIZE).each do |y|
         if x == 0
           if y == 0
             output += "   "
           else
             output += "#{y}  "
           end
-        end
 
-        if x == 1
+        elsif x == 1
           if y == 0
             output += "   "
           else
             output += "__ "
           end
-        end
 
-        if x == 2 || x == 4 || x == 6
+        elsif x.even?
           if y == 0
             output += "#{("A".ord + x/2 - 1).chr} "
           elsif y == 3
@@ -27,9 +27,8 @@ class BoardBuilder
           else
             output += "|  "
           end
-        end
 
-        if x == 3 || x == 5 || x == 7
+        elsif x.odd?
           if y == 0
             output += "  "
           elsif y == 3
