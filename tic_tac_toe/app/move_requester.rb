@@ -1,3 +1,5 @@
+require_relative "move_validator"
+
 class MoveRequester
   attr_reader :stdin, :stdout
   attr_accessor :move
@@ -15,7 +17,7 @@ class MoveRequester
   private
 
   def valid_move_from_user
-    if valid?(get_input)
+    if MoveValidator.new(get_input).run
       move
     else
       re_request
