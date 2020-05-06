@@ -10,15 +10,7 @@ class BoardBuilder
   def run
     (0..BOARD_SIZE * 2 + 1).each do |x|
       (0..BOARD_SIZE).each do |y|
-        if x == 0
-          self.board += first_row(y)
-        elsif x == 1
-          self.board += second_row(y)
-        elsif x.even?
-          self.board += even_row(x / 2 - 1, y)
-        elsif x.odd?
-          self.board += odd_row(y)
-        end
+        self.board += row(x, y)
       end
 
       self.board += end_of_row(x)
@@ -28,6 +20,30 @@ class BoardBuilder
   end
 
   private
+
+  def row(x, y)
+    if x <= 1
+      header_row(x, y)
+    else
+      body_row(x, y)
+    end
+  end
+
+  def header_row(x, y)
+    if x == 0
+      first_row(y)
+    else
+      second_row(y)
+    end
+  end
+
+  def body_row(x, y)
+    if x.even?
+      even_row(x / 2 - 1, y)
+    else
+      odd_row(y)
+    end
+  end
 
   def first_row(y)
     if y == 0
