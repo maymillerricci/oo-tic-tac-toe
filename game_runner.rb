@@ -1,3 +1,3 @@
-require_relative "app/game_runner"
+require_relative "lib/game_runner"
 
 GameRunner.new(STDIN, STDOUT).run

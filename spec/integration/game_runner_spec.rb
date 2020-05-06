@@ -1,4 +1,4 @@
-require_relative "../../tic_tac_toe/app/game_runner"
+require_relative "../../lib/game_runner"
 
 describe "Game runner" do
   it "Outputs a game board and asks for coordinates" do

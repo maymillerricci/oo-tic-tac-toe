@@ -95,4 +95,6 @@ Go through each of the rules and see which ones feel like a fit for any given ar
 #### Repeat more tightly
 After the first couple of features, or however long it takes to get into a green-red-refactor cadance, switch to doing smaller PRs that incorporate this three part flow. You will start to get more typcial feedback from your mentor that talks about how to improve the tests, better cover the feature, or improve the refactoring.
 
+## To Play
 
+Play the game by running `ruby game_runner.rb`.

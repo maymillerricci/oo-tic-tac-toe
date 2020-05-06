@@ -1,4 +1,4 @@
-require_relative "../../tic_tac_toe/app/move_validator"
+require_relative "../../lib/move_validator"
 
 describe "Move validator" do
   it "is valid with valid coordinates" do
