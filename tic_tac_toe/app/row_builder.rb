@@ -17,6 +17,22 @@ class RowBuilder
   private
 
   def header_row
+    if y == 3
+      "#{header_row_base}\n"
+    else
+      header_row_base
+    end
+  end
+
+  def body_row
+    if y == 3
+      "#{body_row_base}|\n"
+    else
+      body_row_base
+    end
+  end
+
+  def header_row_base
     if x == 0
       first_row
     else
@@ -24,7 +40,7 @@ class RowBuilder
     end
   end
 
-  def body_row
+  def body_row_base
     if x.even?
       even_row
     else

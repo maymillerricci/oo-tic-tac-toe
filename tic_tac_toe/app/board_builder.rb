@@ -14,20 +14,8 @@ class BoardBuilder
       (0..BOARD_SIZE).each do |y|
         self.board += RowBuilder.new(x, y).run
       end
-
-      self.board += end_of_row(x)
     end
 
     board
-  end
-
-  private
-
-  def end_of_row(x)
-    if x == 0 || x == 1
-      "\n"
-    else
-      "|\n"
-    end
   end
 end
