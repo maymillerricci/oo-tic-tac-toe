@@ -1,3 +1,5 @@
+require_relative "board_builder"
+
 class GameRunner
   attr_reader :stdin, :stdout
 
@@ -7,6 +9,6 @@ class GameRunner
   end
 
   def run
-    stdout.puts "run run"
+    stdout.puts BoardBuilder.new.run
   end
 end
