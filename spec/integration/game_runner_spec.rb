@@ -5,15 +5,15 @@ describe "Game runner" do
     mock_stdin = StringIO.new
     mock_stdout = StringIO.new
     expected_board_string = <<-BOARD
-       1  2  3
-       __ __ __
-    A |  |  |  |
-      |__|__|__|
-    B |  |  |  |
-      |__|__|__|
-    C |  |  |  |
-      |__|__|__|
-    BOARD
+   1  2  3  
+   __ __ __ 
+A |  |  |  |
+  |__|__|__|
+B |  |  |  |
+  |__|__|__|
+C |  |  |  |
+  |__|__|__|
+BOARD
 
     GameRunner.new(mock_stdin, mock_stdout).run
 
